@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "operations.h"
+#include "messages.h"
 
 void testAddition(void);
 void testSubstraction(void);
@@ -34,7 +35,7 @@ void testSubstraction(void) {
   int result = substraction(a, b);
   int expected = a - b;
 
-  printTestMessage(a == b, "Substraction test passed", "Substraction test failed")
+  printTestMessage(a == b, "Substraction test passed", "Substraction test failed");
 }
 
 int main(int argc, char const *argv[]) {
