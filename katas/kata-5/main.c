@@ -12,7 +12,9 @@ void infographic(HashInt *table, FILE *input) {
       break;
     }
     int len = strlen(string);
-    if (string[len - 1] == '.') {
+    char last = string[len - 1];
+    int hasPunctuation = last == '.' || last == ',' || last == ';' || last == ':' || last == '!' || last == '?';
+    if (hasPunctuation) {
       string[--len] = '\0';
     }
 
@@ -36,5 +38,6 @@ int main(int argc, char const *argv[]) {
   hashInit(&table, sizeHash);
   infographic(&table, fp);
   printHash(&table);
+  fclose(fp);
   return 0;
 }
