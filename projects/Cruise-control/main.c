@@ -15,7 +15,6 @@ int compareStart(const void *p1, const void *p2) {
 }
 
 double cruiseControl(int dest, horse_t *horses, int nHorses) {
-  // qsort(horses, nHorses, sizeof(horse_t), compareStart);
   for (size_t i = nHorses - 1; i > 0; i--) {
     horse_t h1 = horses[i], h2 = horses[i -1];
     if (h1.speed < h2.speed) {
